@@ -26,6 +26,12 @@ export declare const JsonNull: import("@prisma/client-runtime-utils").JsonNullCl
  */
 export declare const AnyNull: import("@prisma/client-runtime-utils").AnyNullClass;
 export declare const ModelName: {
+    readonly Category: 'Category';
+    readonly subCategory: 'subCategory';
+    readonly Attributes: 'Attributes';
+    readonly Products: 'Products';
+    readonly ProductAttributes: 'ProductAttributes';
+    readonly productCategory_SubCat: 'productCategory_SubCat';
     readonly Roles: 'Roles';
     readonly permission: 'permission';
     readonly Useraccount: 'Useraccount';
@@ -39,6 +45,62 @@ export declare const TransactionIsolationLevel: {
     readonly Serializable: 'Serializable';
 };
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export declare const CategoryScalarFieldEnum: {
+    readonly id: 'id';
+    readonly name: 'name';
+    readonly description: 'description';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum];
+export declare const SubCategoryScalarFieldEnum: {
+    readonly id: 'id';
+    readonly name: 'name';
+    readonly categoryId: 'categoryId';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type SubCategoryScalarFieldEnum = (typeof SubCategoryScalarFieldEnum)[keyof typeof SubCategoryScalarFieldEnum];
+export declare const AttributesScalarFieldEnum: {
+    readonly id: 'id';
+    readonly name: 'name';
+    readonly unit: 'unit';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type AttributesScalarFieldEnum = (typeof AttributesScalarFieldEnum)[keyof typeof AttributesScalarFieldEnum];
+export declare const ProductsScalarFieldEnum: {
+    readonly id: 'id';
+    readonly name: 'name';
+    readonly description: 'description';
+    readonly stocks: 'stocks';
+    readonly selling_price: 'selling_price';
+    readonly hasdiscount: 'hasdiscount';
+    readonly discountType: 'discountType';
+    readonly discount: 'discount';
+    readonly offerPrice: 'offerPrice';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum];
+export declare const ProductAttributesScalarFieldEnum: {
+    readonly id: 'id';
+    readonly value: 'value';
+    readonly product_id: 'product_id';
+    readonly attributes_id: 'attributes_id';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type ProductAttributesScalarFieldEnum = (typeof ProductAttributesScalarFieldEnum)[keyof typeof ProductAttributesScalarFieldEnum];
+export declare const ProductCategory_SubCatScalarFieldEnum: {
+    readonly id: 'id';
+    readonly productId: 'productId';
+    readonly categoryId: 'categoryId';
+    readonly subCategoryId: 'subCategoryId';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type ProductCategory_SubCatScalarFieldEnum = (typeof ProductCategory_SubCatScalarFieldEnum)[keyof typeof ProductCategory_SubCatScalarFieldEnum];
 export declare const RolesScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
@@ -85,3 +147,8 @@ export declare const QueryMode: {
     readonly insensitive: 'insensitive';
 };
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode];
+export declare const NullsOrder: {
+    readonly first: 'first';
+    readonly last: 'last';
+};
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder];

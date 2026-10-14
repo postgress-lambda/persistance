@@ -1,3 +1,9 @@
+export type * from './models/Category.js';
+export type * from './models/subCategory.js';
+export type * from './models/Attributes.js';
+export type * from './models/Products.js';
+export type * from './models/ProductAttributes.js';
+export type * from './models/productCategory_SubCat.js';
 export type * from './models/Roles.js';
 export type * from './models/permission.js';
 export type * from './models/Useraccount.js';

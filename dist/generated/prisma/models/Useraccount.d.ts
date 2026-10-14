@@ -385,9 +385,6 @@ export type UseraccountUncheckedUpdateManyWithoutRolesNestedInput = {
     updateMany?: Prisma.UseraccountUpdateManyWithWhereWithoutRolesInput | Prisma.UseraccountUpdateManyWithWhereWithoutRolesInput[];
     deleteMany?: Prisma.UseraccountScalarWhereInput | Prisma.UseraccountScalarWhereInput[];
 };
-export type BoolFieldUpdateOperationsInput = {
-    set?: boolean;
-};
 export type UseraccountCreateNestedOneWithoutProfileInput = {
     create?: Prisma.XOR<Prisma.UseraccountCreateWithoutProfileInput, Prisma.UseraccountUncheckedCreateWithoutProfileInput>;
     connectOrCreate?: Prisma.UseraccountCreateOrConnectWithoutProfileInput;

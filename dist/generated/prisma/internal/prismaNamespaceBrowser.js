@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
+exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/index-browser"));
 exports.Decimal = runtime.Decimal;
 exports.NullTypes = {
@@ -75,6 +75,12 @@ exports.JsonNull = runtime.JsonNull;
  */
 exports.AnyNull = runtime.AnyNull;
 exports.ModelName = {
+    Category: 'Category',
+    subCategory: 'subCategory',
+    Attributes: 'Attributes',
+    Products: 'Products',
+    ProductAttributes: 'ProductAttributes',
+    productCategory_SubCat: 'productCategory_SubCat',
     Roles: 'Roles',
     permission: 'permission',
     Useraccount: 'Useraccount',
@@ -89,6 +95,56 @@ exports.TransactionIsolationLevel = runtime.makeStrictEnum({
     RepeatableRead: 'RepeatableRead',
     Serializable: 'Serializable'
 });
+exports.CategoryScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.SubCategoryScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    categoryId: 'categoryId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.AttributesScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    unit: 'unit',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.ProductsScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    stocks: 'stocks',
+    selling_price: 'selling_price',
+    hasdiscount: 'hasdiscount',
+    discountType: 'discountType',
+    discount: 'discount',
+    offerPrice: 'offerPrice',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.ProductAttributesScalarFieldEnum = {
+    id: 'id',
+    value: 'value',
+    product_id: 'product_id',
+    attributes_id: 'attributes_id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.ProductCategory_SubCatScalarFieldEnum = {
+    id: 'id',
+    productId: 'productId',
+    categoryId: 'categoryId',
+    subCategoryId: 'subCategoryId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
 exports.RolesScalarFieldEnum = {
     id: 'id',
     name: 'name',
@@ -128,5 +184,9 @@ exports.SortOrder = {
 exports.QueryMode = {
     default: 'default',
     insensitive: 'insensitive'
+};
+exports.NullsOrder = {
+    first: 'first',
+    last: 'last'
 };
 //# sourceMappingURL=prismaNamespaceBrowser.js.map

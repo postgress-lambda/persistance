@@ -11,8 +11,8 @@ export interface PrismaClientConstructor {
    * const prisma = new PrismaClient({
    *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
    * })
-   * // Fetch zero or more Roles
-   * const roles = await prisma.roles.findMany()
+   * // Fetch zero or more Categories
+   * const categories = await prisma.category.findMany()
    * ```
    *
    * Read more in our [docs](https://pris.ly/d/client).
@@ -30,8 +30,8 @@ export interface PrismaClientConstructor {
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Roles
- * const roles = await prisma.roles.findMany()
+ * // Fetch zero or more Categories
+ * const categories = await prisma.category.findMany()
  * ```
  *
  * Read more in our [docs](https://pris.ly/d/client).
@@ -118,13 +118,79 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         extArgs: ExtArgs;
     }>>;
     /**
- * `prisma.roles`: Exposes CRUD operations for the **Roles** model.
+ * `prisma.category`: Exposes CRUD operations for the **Category** model.
   * Example usage:
   * ```ts
-  * // Fetch zero or more Roles
-  * const roles = await prisma.roles.findMany()
+  * // Fetch zero or more Categories
+  * const categories = await prisma.category.findMany()
   * ```
   */
+    get category(): Prisma.CategoryDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.subCategory`: Exposes CRUD operations for the **subCategory** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more SubCategories
+      * const subCategories = await prisma.subCategory.findMany()
+      * ```
+      */
+    get subCategory(): Prisma.subCategoryDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.attributes`: Exposes CRUD operations for the **Attributes** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Attributes
+      * const attributes = await prisma.attributes.findMany()
+      * ```
+      */
+    get attributes(): Prisma.AttributesDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.products`: Exposes CRUD operations for the **Products** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Products
+      * const products = await prisma.products.findMany()
+      * ```
+      */
+    get products(): Prisma.ProductsDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.productAttributes`: Exposes CRUD operations for the **ProductAttributes** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more ProductAttributes
+      * const productAttributes = await prisma.productAttributes.findMany()
+      * ```
+      */
+    get productAttributes(): Prisma.ProductAttributesDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.productCategory_SubCat`: Exposes CRUD operations for the **productCategory_SubCat** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more ProductCategory_SubCats
+      * const productCategory_SubCats = await prisma.productCategory_SubCat.findMany()
+      * ```
+      */
+    get productCategory_SubCat(): Prisma.productCategory_SubCatDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.roles`: Exposes CRUD operations for the **Roles** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Roles
+      * const roles = await prisma.roles.findMany()
+      * ```
+      */
     get roles(): Prisma.RolesDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;

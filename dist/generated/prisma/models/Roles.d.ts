@@ -307,19 +307,6 @@ export type RolesListRelationFilter = {
 export type RolesOrderByRelationAggregateInput = {
     _count?: Prisma.SortOrder;
 };
-export type StringFieldUpdateOperationsInput = {
-    set?: string;
-};
-export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string;
-};
-export type IntFieldUpdateOperationsInput = {
-    set?: number;
-    increment?: number;
-    decrement?: number;
-    multiply?: number;
-    divide?: number;
-};
 export type RolesCreateNestedOneWithoutPermissionsInput = {
     create?: Prisma.XOR<Prisma.RolesCreateWithoutPermissionsInput, Prisma.RolesUncheckedCreateWithoutPermissionsInput>;
     connectOrCreate?: Prisma.RolesCreateOrConnectWithoutPermissionsInput;
