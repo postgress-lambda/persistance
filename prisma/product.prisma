@@ -1,0 +1,50 @@
+model Products {
+  id            Int                      @id @default(autoincrement())
+  name          String
+  description   String?
+  stocks        Int                      @default(0)
+  selling_price Decimal                  @db.Decimal(10, 2)
+  hasdiscount   Boolean                  @default(false)
+  discountType  String?
+  discount      Decimal?                 @db.Decimal(10, 2)
+  offerPrice    Decimal?                 @db.Decimal(10, 2)
+  attributes    ProductAttributes[]
+  categories    productCategory_SubCat[]
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+
+  @@index([name])
+  @@index([stocks, selling_price])
+  @@index([hasdiscount])
+  @@map("products")
+}
+
+model ProductAttributes {
+  id            Int        @id @default(autoincrement())
+  value         String
+  product_id    Int
+  attributes_id Int
+  product       Products   @relation(references: [id], fields: [product_id])
+  attributes    Attributes @relation(references: [id], fields: [attributes_id])
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  @@index([attributes_id, product_id])
+  @@map("product_attributes")
+}
+
+model productCategory_SubCat {
+  id            Int @id @default(autoincrement())
+  productId     Int
+  categoryId    Int
+  subCategoryId Int
+
+  category    Category    @relation(references: [id], fields: [categoryId])
+  subCategory subCategory @relation(references: [id], fields: [subCategoryId])
+  product     Products    @relation(references: [id], fields: [productId])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@unique([productId, categoryId, subCategoryId])
+  @@map("product_category_subcat")
+}
