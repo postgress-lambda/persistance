@@ -305,16 +305,6 @@ export type StringFieldUpdateOperationsInput = {
 export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null;
 };
-export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string;
-};
-export type IntFieldUpdateOperationsInput = {
-    set?: number;
-    increment?: number;
-    decrement?: number;
-    multiply?: number;
-    divide?: number;
-};
 export type CategoryCreateNestedOneWithoutSubCategoriesInput = {
     create?: Prisma.XOR<Prisma.CategoryCreateWithoutSubCategoriesInput, Prisma.CategoryUncheckedCreateWithoutSubCategoriesInput>;
     connectOrCreate?: Prisma.CategoryCreateOrConnectWithoutSubCategoriesInput;

@@ -1,0 +1,27 @@
+model Carts {
+  id         Int      @id @default(autoincrement())
+  customerId Int
+  productId  Int
+  quantity   Int
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product    Products @relation(fields: [productId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([customerId, productId])
+  @@map("carts")
+}
+
+model Wishlists {
+  id         Int      @id @default(autoincrement())
+  customerId Int
+  productId  Int
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product    Products @relation(fields: [productId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([customerId, productId])
+  @@index([productId, customerId])
+  @@map("wishlist")
+}

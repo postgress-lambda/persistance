@@ -9,6 +9,8 @@ model Products {
   discount      Decimal?                 @db.Decimal(10, 2)
   offerPrice    Decimal?                 @db.Decimal(10, 2)
   attributes    ProductAttributes[]
+  carts         Carts[]
+  Wishlists     Wishlists[]
   categories    productCategory_SubCat[]
   createdAt     DateTime                 @default(now())
   updatedAt     DateTime                 @updatedAt

@@ -1,0 +1,32 @@
+model Customer {
+  id            Int         @id @default(autoincrement())
+  name          String
+  phone         String
+  email         String?
+  emailVerified Boolean     @default(false)
+  address       Address[]
+  Carts         Carts[]
+  wishlist      Wishlists[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([phone, email])
+  @@map("customers")
+}
+
+model Address {
+  id         Int      @id @default(autoincrement())
+  houseNo    String
+  address    String
+  city       String
+  pincode    String
+  state      String
+  isPrimary  Boolean  @default(false)
+  customerId Int
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([customerId])
+  @@map("address")
+}

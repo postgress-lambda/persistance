@@ -11,8 +11,8 @@ export interface PrismaClientConstructor {
    * const prisma = new PrismaClient({
    *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
    * })
-   * // Fetch zero or more Categories
-   * const categories = await prisma.category.findMany()
+   * // Fetch zero or more Carts
+   * const carts = await prisma.carts.findMany()
    * ```
    *
    * Read more in our [docs](https://pris.ly/d/client).
@@ -30,8 +30,8 @@ export interface PrismaClientConstructor {
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Categories
- * const categories = await prisma.category.findMany()
+ * // Fetch zero or more Carts
+ * const carts = await prisma.carts.findMany()
  * ```
  *
  * Read more in our [docs](https://pris.ly/d/client).
@@ -118,13 +118,35 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         extArgs: ExtArgs;
     }>>;
     /**
- * `prisma.category`: Exposes CRUD operations for the **Category** model.
+ * `prisma.carts`: Exposes CRUD operations for the **Carts** model.
   * Example usage:
   * ```ts
-  * // Fetch zero or more Categories
-  * const categories = await prisma.category.findMany()
+  * // Fetch zero or more Carts
+  * const carts = await prisma.carts.findMany()
   * ```
   */
+    get carts(): Prisma.CartsDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.wishlists`: Exposes CRUD operations for the **Wishlists** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Wishlists
+      * const wishlists = await prisma.wishlists.findMany()
+      * ```
+      */
+    get wishlists(): Prisma.WishlistsDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.category`: Exposes CRUD operations for the **Category** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Categories
+      * const categories = await prisma.category.findMany()
+      * ```
+      */
     get category(): Prisma.CategoryDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
@@ -148,6 +170,28 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
       * ```
       */
     get attributes(): Prisma.AttributesDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.customer`: Exposes CRUD operations for the **Customer** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Customers
+      * const customers = await prisma.customer.findMany()
+      * ```
+      */
+    get customer(): Prisma.CustomerDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.address`: Exposes CRUD operations for the **Address** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Addresses
+      * const addresses = await prisma.address.findMany()
+      * ```
+      */
+    get address(): Prisma.AddressDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
     /**

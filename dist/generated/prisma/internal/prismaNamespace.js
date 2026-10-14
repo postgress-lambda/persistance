@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.defineExtension = exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.prismaVersion = exports.getExtensionContext = exports.Decimal = exports.Sql = exports.raw = exports.join = exports.empty = exports.sql = exports.PrismaClientValidationError = exports.PrismaClientInitializationError = exports.PrismaClientRustPanicError = exports.PrismaClientUnknownRequestError = exports.PrismaClientKnownRequestError = void 0;
+exports.defineExtension = exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.prismaVersion = exports.getExtensionContext = exports.Decimal = exports.Sql = exports.raw = exports.join = exports.empty = exports.sql = exports.PrismaClientValidationError = exports.PrismaClientInitializationError = exports.PrismaClientRustPanicError = exports.PrismaClientUnknownRequestError = exports.PrismaClientKnownRequestError = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/client"));
 /**
  * Prisma Errors
@@ -103,9 +103,13 @@ exports.JsonNull = runtime.JsonNull;
  */
 exports.AnyNull = runtime.AnyNull;
 exports.ModelName = {
+    Carts: 'Carts',
+    Wishlists: 'Wishlists',
     Category: 'Category',
     subCategory: 'subCategory',
     Attributes: 'Attributes',
+    Customer: 'Customer',
+    Address: 'Address',
     Products: 'Products',
     ProductAttributes: 'ProductAttributes',
     productCategory_SubCat: 'productCategory_SubCat',
@@ -123,6 +127,21 @@ exports.TransactionIsolationLevel = runtime.makeStrictEnum({
     RepeatableRead: 'RepeatableRead',
     Serializable: 'Serializable'
 });
+exports.CartsScalarFieldEnum = {
+    id: 'id',
+    customerId: 'customerId',
+    productId: 'productId',
+    quantity: 'quantity',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.WishlistsScalarFieldEnum = {
+    id: 'id',
+    customerId: 'customerId',
+    productId: 'productId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
 exports.CategoryScalarFieldEnum = {
     id: 'id',
     name: 'name',
@@ -141,6 +160,27 @@ exports.AttributesScalarFieldEnum = {
     id: 'id',
     name: 'name',
     unit: 'unit',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.CustomerScalarFieldEnum = {
+    id: 'id',
+    name: 'name',
+    phone: 'phone',
+    email: 'email',
+    emailVerified: 'emailVerified',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.AddressScalarFieldEnum = {
+    id: 'id',
+    houseNo: 'houseNo',
+    address: 'address',
+    city: 'city',
+    pincode: 'pincode',
+    state: 'state',
+    isPrimary: 'isPrimary',
+    customerId: 'customerId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };

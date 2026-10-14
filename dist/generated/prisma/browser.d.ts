@@ -3,6 +3,16 @@ export { Prisma };
 export * as $Enums from './enums.js';
 export * from './enums.js';
 /**
+ * Model Carts
+ *
+ */
+export type Carts = Prisma.CartsModel;
+/**
+ * Model Wishlists
+ *
+ */
+export type Wishlists = Prisma.WishlistsModel;
+/**
  * Model Category
  *
  */
@@ -17,6 +27,16 @@ export type subCategory = Prisma.subCategoryModel;
  *
  */
 export type Attributes = Prisma.AttributesModel;
+/**
+ * Model Customer
+ *
+ */
+export type Customer = Prisma.CustomerModel;
+/**
+ * Model Address
+ *
+ */
+export type Address = Prisma.AddressModel;
 /**
  * Model Products
  *
