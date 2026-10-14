@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
+exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductImageScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/index-browser"));
 exports.Decimal = runtime.Decimal;
 exports.NullTypes = {
@@ -83,6 +83,7 @@ exports.ModelName = {
     Customer: 'Customer',
     Address: 'Address',
     Products: 'Products',
+    ProductImage: 'ProductImage',
     ProductAttributes: 'ProductAttributes',
     productCategory_SubCat: 'productCategory_SubCat',
     Roles: 'Roles',
@@ -168,6 +169,13 @@ exports.ProductsScalarFieldEnum = {
     offerPrice: 'offerPrice',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
+};
+exports.ProductImageScalarFieldEnum = {
+    id: 'id',
+    mediaType: 'mediaType',
+    url: 'url',
+    isCover: 'isCover',
+    productId: 'productId'
 };
 exports.ProductAttributesScalarFieldEnum = {
     id: 'id',

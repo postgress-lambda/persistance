@@ -34,6 +34,7 @@ export declare const ModelName: {
     readonly Customer: 'Customer';
     readonly Address: 'Address';
     readonly Products: 'Products';
+    readonly ProductImage: 'ProductImage';
     readonly ProductAttributes: 'ProductAttributes';
     readonly productCategory_SubCat: 'productCategory_SubCat';
     readonly Roles: 'Roles';
@@ -127,6 +128,14 @@ export declare const ProductsScalarFieldEnum: {
     readonly updatedAt: 'updatedAt';
 };
 export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum];
+export declare const ProductImageScalarFieldEnum: {
+    readonly id: 'id';
+    readonly mediaType: 'mediaType';
+    readonly url: 'url';
+    readonly isCover: 'isCover';
+    readonly productId: 'productId';
+};
+export type ProductImageScalarFieldEnum = (typeof ProductImageScalarFieldEnum)[keyof typeof ProductImageScalarFieldEnum];
 export declare const ProductAttributesScalarFieldEnum: {
     readonly id: 'id';
     readonly value: 'value';

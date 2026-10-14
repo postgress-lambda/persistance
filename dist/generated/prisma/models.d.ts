@@ -6,6 +6,7 @@ export type * from './models/Attributes.js';
 export type * from './models/Customer.js';
 export type * from './models/Address.js';
 export type * from './models/Products.js';
+export type * from './models/ProductImage.js';
 export type * from './models/ProductAttributes.js';
 export type * from './models/productCategory_SubCat.js';
 export type * from './models/Roles.js';

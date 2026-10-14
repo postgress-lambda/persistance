@@ -43,6 +43,11 @@ export type Address = Prisma.AddressModel;
  */
 export type Products = Prisma.ProductsModel;
 /**
+ * Model ProductImage
+ *
+ */
+export type ProductImage = Prisma.ProductImageModel;
+/**
  * Model ProductAttributes
  *
  */

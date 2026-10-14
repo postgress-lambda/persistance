@@ -206,6 +206,17 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         omit: OmitOpts;
     }>;
     /**
+     * `prisma.productImage`: Exposes CRUD operations for the **ProductImage** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more ProductImages
+      * const productImages = await prisma.productImage.findMany()
+      * ```
+      */
+    get productImage(): Prisma.ProductImageDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
      * `prisma.productAttributes`: Exposes CRUD operations for the **ProductAttributes** model.
       * Example usage:
       * ```ts

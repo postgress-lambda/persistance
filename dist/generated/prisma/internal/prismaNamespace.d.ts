@@ -252,6 +252,7 @@ export declare const ModelName: {
     readonly Customer: 'Customer';
     readonly Address: 'Address';
     readonly Products: 'Products';
+    readonly ProductImage: 'ProductImage';
     readonly ProductAttributes: 'ProductAttributes';
     readonly productCategory_SubCat: 'productCategory_SubCat';
     readonly Roles: 'Roles';
@@ -270,7 +271,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "carts" | "wishlists" | "category" | "subCategory" | "attributes" | "customer" | "address" | "products" | "productAttributes" | "productCategory_SubCat" | "roles" | "permission" | "useraccount" | "userProfile";
+        modelProps: "carts" | "wishlists" | "category" | "subCategory" | "attributes" | "customer" | "address" | "products" | "productImage" | "productAttributes" | "productCategory_SubCat" | "roles" | "permission" | "useraccount" | "userProfile";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -866,6 +867,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        ProductImage: {
+            payload: Prisma.$ProductImagePayload<ExtArgs>;
+            fields: Prisma.ProductImageFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.ProductImageFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.ProductImageFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                findFirst: {
+                    args: Prisma.ProductImageFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.ProductImageFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                findMany: {
+                    args: Prisma.ProductImageFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>[];
+                };
+                create: {
+                    args: Prisma.ProductImageCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                createMany: {
+                    args: Prisma.ProductImageCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.ProductImageCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>[];
+                };
+                delete: {
+                    args: Prisma.ProductImageDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                update: {
+                    args: Prisma.ProductImageUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                deleteMany: {
+                    args: Prisma.ProductImageDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.ProductImageUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.ProductImageUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>[];
+                };
+                upsert: {
+                    args: Prisma.ProductImageUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductImagePayload>;
+                };
+                aggregate: {
+                    args: Prisma.ProductImageAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateProductImage>;
+                };
+                groupBy: {
+                    args: Prisma.ProductImageGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.ProductImageGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.ProductImageCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.ProductImageCountAggregateOutputType> | number;
+                };
+            };
+        };
         ProductAttributes: {
             payload: Prisma.$ProductAttributesPayload<ExtArgs>;
             fields: Prisma.ProductAttributesFieldRefs;
@@ -1422,6 +1497,14 @@ export declare const ProductsScalarFieldEnum: {
     readonly updatedAt: 'updatedAt';
 };
 export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum];
+export declare const ProductImageScalarFieldEnum: {
+    readonly id: 'id';
+    readonly mediaType: 'mediaType';
+    readonly url: 'url';
+    readonly isCover: 'isCover';
+    readonly productId: 'productId';
+};
+export type ProductImageScalarFieldEnum = (typeof ProductImageScalarFieldEnum)[keyof typeof ProductImageScalarFieldEnum];
 export declare const ProductAttributesScalarFieldEnum: {
     readonly id: 'id';
     readonly value: 'value';
@@ -1693,6 +1776,7 @@ export type GlobalOmitConfig = {
     customer?: Prisma.CustomerOmit;
     address?: Prisma.AddressOmit;
     products?: Prisma.ProductsOmit;
+    productImage?: Prisma.ProductImageOmit;
     productAttributes?: Prisma.ProductAttributesOmit;
     productCategory_SubCat?: Prisma.productCategory_SubCatOmit;
     roles?: Prisma.RolesOmit;
