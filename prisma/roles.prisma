@@ -1,0 +1,24 @@
+//one role contains many permission(one->many)
+
+model Roles {
+  id          Int           @id @default(autoincrement())
+  name        String        @unique
+  sorthand    String
+  permissions permission[]
+  useracounts Useraccount[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("roles")
+}
+
+model permission {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  rolesId   Int
+  roles     Roles    @relation(fields: [rolesId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("permission")
+}

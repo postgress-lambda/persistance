@@ -1,0 +1,29 @@
+// one user_accounts contain one user UserProfile (one<->one)
+// one user_accounts contains many roles
+
+model Useraccount {
+  id            Int          @id @default(autoincrement())
+  username      String       @unique
+  hashpassword  String       @unique
+  email         String       @unique
+  emailVerified Boolean      @default(false)
+  profile       UserProfile?
+  roles         Roles[]
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@map("user_accounts")
+}
+
+model UserProfile {
+  id          Int         @id @default(autoincrement())
+  account_id  Int         @unique
+  firstName   String
+  lastName    String
+  phoneNumber String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  accounts    Useraccount @relation(fields: [account_id], references: [id], onDelete: Cascade)
+
+  @@map("user_profile")
+}
