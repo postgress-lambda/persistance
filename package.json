@@ -1,5 +1,5 @@
 {
-  "name": "persistence",
+  "name": "@halithmm/persistence",
   "version": "1.0.0",
   "description": "Reusable Node.js persistence layer using Prisma 7 and PostgreSQL",
   "main": "./dist/index.js",
