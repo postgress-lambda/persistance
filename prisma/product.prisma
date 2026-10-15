@@ -13,6 +13,8 @@ model Products {
   Wishlists     Wishlists[]
   mediafile     ProductImage[]
   categories    productCategory_SubCat[]
+  orderItems    OrderItem[]
+  isActive      Boolean                  @default(true)
   createdAt     DateTime                 @default(now())
   updatedAt     DateTime                 @updatedAt
 
