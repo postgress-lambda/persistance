@@ -3,6 +3,11 @@ export { Prisma };
 export * as $Enums from './enums.js';
 export * from './enums.js';
 /**
+ * Model AuditLog
+ *
+ */
+export type AuditLog = Prisma.AuditLogModel;
+/**
  * Model Carts
  *
  */
@@ -47,6 +52,11 @@ export type Order = Prisma.OrderModel;
  *
  */
 export type OrderItem = Prisma.OrderItemModel;
+/**
+ * Model Payment
+ *
+ */
+export type Payment = Prisma.PaymentModel;
 /**
  * Model Products
  *

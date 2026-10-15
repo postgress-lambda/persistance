@@ -1,0 +1,14 @@
+model AuditLog {
+  id         Int      @id @default(autoincrement())
+  customerId Int?
+  action     String
+  entity     String
+  entityId   String
+  details    Json?
+  createdAt  DateTime @default(now())
+
+  @@index([customerId, createdAt])
+  @@index([entity, entityId, createdAt])
+  @@index([action, createdAt])
+  @@map("audit_logs")
+}

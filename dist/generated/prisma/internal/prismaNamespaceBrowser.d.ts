@@ -26,6 +26,7 @@ export declare const JsonNull: import("@prisma/client-runtime-utils").JsonNullCl
  */
 export declare const AnyNull: import("@prisma/client-runtime-utils").AnyNullClass;
 export declare const ModelName: {
+    readonly AuditLog: 'AuditLog';
     readonly Carts: 'Carts';
     readonly Wishlists: 'Wishlists';
     readonly Category: 'Category';
@@ -35,6 +36,7 @@ export declare const ModelName: {
     readonly Address: 'Address';
     readonly Order: 'Order';
     readonly OrderItem: 'OrderItem';
+    readonly Payment: 'Payment';
     readonly Products: 'Products';
     readonly ProductImage: 'ProductImage';
     readonly ProductAttributes: 'ProductAttributes';
@@ -52,6 +54,16 @@ export declare const TransactionIsolationLevel: {
     readonly Serializable: 'Serializable';
 };
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export declare const AuditLogScalarFieldEnum: {
+    readonly id: 'id';
+    readonly customerId: 'customerId';
+    readonly action: 'action';
+    readonly entity: 'entity';
+    readonly entityId: 'entityId';
+    readonly details: 'details';
+    readonly createdAt: 'createdAt';
+};
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum];
 export declare const CartsScalarFieldEnum: {
     readonly id: 'id';
     readonly customerId: 'customerId';
@@ -72,6 +84,7 @@ export type WishlistsScalarFieldEnum = (typeof WishlistsScalarFieldEnum)[keyof t
 export declare const CategoryScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
+    readonly imageurl: 'imageurl';
     readonly description: 'description';
     readonly createdAt: 'createdAt';
     readonly updatedAt: 'updatedAt';
@@ -80,6 +93,7 @@ export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typ
 export declare const SubCategoryScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
+    readonly imageurl: 'imageurl';
     readonly categoryId: 'categoryId';
     readonly createdAt: 'createdAt';
     readonly updatedAt: 'updatedAt';
@@ -134,6 +148,17 @@ export declare const OrderItemScalarFieldEnum: {
     readonly updatedAt: 'updatedAt';
 };
 export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum];
+export declare const PaymentScalarFieldEnum: {
+    readonly id: 'id';
+    readonly orderID: 'orderID';
+    readonly amount: 'amount';
+    readonly status: 'status';
+    readonly provider: 'provider';
+    readonly transactionId: 'transactionId';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum];
 export declare const ProductsScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
@@ -216,11 +241,22 @@ export declare const SortOrder: {
     readonly desc: 'desc';
 };
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder];
+export declare const NullableJsonNullValueInput: {
+    readonly DbNull: import("@prisma/client-runtime-utils").DbNullClass;
+    readonly JsonNull: import("@prisma/client-runtime-utils").JsonNullClass;
+};
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput];
 export declare const QueryMode: {
     readonly default: 'default';
     readonly insensitive: 'insensitive';
 };
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode];
+export declare const JsonNullValueFilter: {
+    readonly DbNull: import("@prisma/client-runtime-utils").DbNullClass;
+    readonly JsonNull: import("@prisma/client-runtime-utils").JsonNullClass;
+    readonly AnyNull: import("@prisma/client-runtime-utils").AnyNullClass;
+};
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter];
 export declare const NullsOrder: {
     readonly first: 'first';
     readonly last: 'last';

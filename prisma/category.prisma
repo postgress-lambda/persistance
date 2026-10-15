@@ -1,6 +1,7 @@
 model Category {
   id            Int                      @id @default(autoincrement())
   name          String                   @unique
+  imageurl      String?
   description   String?
   subCategories subCategory[]
   product       productCategory_SubCat[]
@@ -13,6 +14,7 @@ model Category {
 model subCategory {
   id         Int                      @id @default(autoincrement())
   name       String                   @unique
+  imageurl   String?
   categoryId Int
   product    productCategory_SubCat[]
   createdAt  DateTime                 @default(now())

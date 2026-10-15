@@ -338,16 +338,6 @@ export type CartsListRelationFilter = {
 export type CartsOrderByRelationAggregateInput = {
     _count?: Prisma.SortOrder;
 };
-export type IntFieldUpdateOperationsInput = {
-    set?: number;
-    increment?: number;
-    decrement?: number;
-    multiply?: number;
-    divide?: number;
-};
-export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string;
-};
 export type CartsCreateNestedManyWithoutCustomerInput = {
     create?: Prisma.XOR<Prisma.CartsCreateWithoutCustomerInput, Prisma.CartsUncheckedCreateWithoutCustomerInput> | Prisma.CartsCreateWithoutCustomerInput[] | Prisma.CartsUncheckedCreateWithoutCustomerInput[];
     connectOrCreate?: Prisma.CartsCreateOrConnectWithoutCustomerInput | Prisma.CartsCreateOrConnectWithoutCustomerInput[];

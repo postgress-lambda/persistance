@@ -7,3 +7,10 @@ export declare const OrderStatus: {
     readonly CANCELLED: 'CANCELLED';
 };
 export type OrderStatus = (typeof OrderStatus)[keyof typeof OrderStatus];
+export declare const PaymentStatus: {
+    readonly PENDING: 'PENDING';
+    readonly SUCCESS: 'SUCCESS';
+    readonly FAILED: 'FAILED';
+    readonly REFUNDED: 'REFUNDED';
+};
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus];

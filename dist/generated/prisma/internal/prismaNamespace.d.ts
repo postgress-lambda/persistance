@@ -244,6 +244,7 @@ export type ExcludeUnderscoreKeys<T extends string> = T extends `_${string}` ? n
 export type FieldRef<Model, FieldType> = runtime.FieldRef<Model, FieldType>;
 type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRef<Model, FieldType>;
 export declare const ModelName: {
+    readonly AuditLog: 'AuditLog';
     readonly Carts: 'Carts';
     readonly Wishlists: 'Wishlists';
     readonly Category: 'Category';
@@ -253,6 +254,7 @@ export declare const ModelName: {
     readonly Address: 'Address';
     readonly Order: 'Order';
     readonly OrderItem: 'OrderItem';
+    readonly Payment: 'Payment';
     readonly Products: 'Products';
     readonly ProductImage: 'ProductImage';
     readonly ProductAttributes: 'ProductAttributes';
@@ -273,10 +275,84 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "carts" | "wishlists" | "category" | "subCategory" | "attributes" | "customer" | "address" | "order" | "orderItem" | "products" | "productImage" | "productAttributes" | "productCategory_SubCat" | "roles" | "permission" | "useraccount" | "userProfile";
+        modelProps: "auditLog" | "carts" | "wishlists" | "category" | "subCategory" | "attributes" | "customer" | "address" | "order" | "orderItem" | "payment" | "products" | "productImage" | "productAttributes" | "productCategory_SubCat" | "roles" | "permission" | "useraccount" | "userProfile";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
+        AuditLog: {
+            payload: Prisma.$AuditLogPayload<ExtArgs>;
+            fields: Prisma.AuditLogFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.AuditLogFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.AuditLogFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                findFirst: {
+                    args: Prisma.AuditLogFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.AuditLogFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                findMany: {
+                    args: Prisma.AuditLogFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[];
+                };
+                create: {
+                    args: Prisma.AuditLogCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                createMany: {
+                    args: Prisma.AuditLogCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.AuditLogCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[];
+                };
+                delete: {
+                    args: Prisma.AuditLogDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                update: {
+                    args: Prisma.AuditLogUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.AuditLogDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.AuditLogUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.AuditLogUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[];
+                };
+                upsert: {
+                    args: Prisma.AuditLogUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>;
+                };
+                aggregate: {
+                    args: Prisma.AuditLogAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateAuditLog>;
+                };
+                groupBy: {
+                    args: Prisma.AuditLogGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AuditLogGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.AuditLogCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AuditLogCountAggregateOutputType> | number;
+                };
+            };
+        };
         Carts: {
             payload: Prisma.$CartsPayload<ExtArgs>;
             fields: Prisma.CartsFieldRefs;
@@ -943,6 +1019,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
+        Payment: {
+            payload: Prisma.$PaymentPayload<ExtArgs>;
+            fields: Prisma.PaymentFieldRefs;
+            operations: {
+                findUnique: {
+                    args: Prisma.PaymentFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload> | null;
+                };
+                findUniqueOrThrow: {
+                    args: Prisma.PaymentFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                findFirst: {
+                    args: Prisma.PaymentFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload> | null;
+                };
+                findFirstOrThrow: {
+                    args: Prisma.PaymentFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                findMany: {
+                    args: Prisma.PaymentFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>[];
+                };
+                create: {
+                    args: Prisma.PaymentCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                createMany: {
+                    args: Prisma.PaymentCreateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                createManyAndReturn: {
+                    args: Prisma.PaymentCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>[];
+                };
+                delete: {
+                    args: Prisma.PaymentDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                update: {
+                    args: Prisma.PaymentUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                deleteMany: {
+                    args: Prisma.PaymentDeleteManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateMany: {
+                    args: Prisma.PaymentUpdateManyArgs<ExtArgs>;
+                    result: BatchPayload;
+                };
+                updateManyAndReturn: {
+                    args: Prisma.PaymentUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>[];
+                };
+                upsert: {
+                    args: Prisma.PaymentUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$PaymentPayload>;
+                };
+                aggregate: {
+                    args: Prisma.PaymentAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregatePayment>;
+                };
+                groupBy: {
+                    args: Prisma.PaymentGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.PaymentGroupByOutputType>[];
+                };
+                count: {
+                    args: Prisma.PaymentCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.PaymentCountAggregateOutputType> | number;
+                };
+            };
+        };
         Products: {
             payload: Prisma.$ProductsPayload<ExtArgs>;
             fields: Prisma.ProductsFieldRefs;
@@ -1569,6 +1719,16 @@ export declare const TransactionIsolationLevel: {
     readonly Serializable: 'Serializable';
 };
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel];
+export declare const AuditLogScalarFieldEnum: {
+    readonly id: 'id';
+    readonly customerId: 'customerId';
+    readonly action: 'action';
+    readonly entity: 'entity';
+    readonly entityId: 'entityId';
+    readonly details: 'details';
+    readonly createdAt: 'createdAt';
+};
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum];
 export declare const CartsScalarFieldEnum: {
     readonly id: 'id';
     readonly customerId: 'customerId';
@@ -1589,6 +1749,7 @@ export type WishlistsScalarFieldEnum = (typeof WishlistsScalarFieldEnum)[keyof t
 export declare const CategoryScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
+    readonly imageurl: 'imageurl';
     readonly description: 'description';
     readonly createdAt: 'createdAt';
     readonly updatedAt: 'updatedAt';
@@ -1597,6 +1758,7 @@ export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typ
 export declare const SubCategoryScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
+    readonly imageurl: 'imageurl';
     readonly categoryId: 'categoryId';
     readonly createdAt: 'createdAt';
     readonly updatedAt: 'updatedAt';
@@ -1651,6 +1813,17 @@ export declare const OrderItemScalarFieldEnum: {
     readonly updatedAt: 'updatedAt';
 };
 export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum];
+export declare const PaymentScalarFieldEnum: {
+    readonly id: 'id';
+    readonly orderID: 'orderID';
+    readonly amount: 'amount';
+    readonly status: 'status';
+    readonly provider: 'provider';
+    readonly transactionId: 'transactionId';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum];
 export declare const ProductsScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
@@ -1733,11 +1906,22 @@ export declare const SortOrder: {
     readonly desc: 'desc';
 };
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder];
+export declare const NullableJsonNullValueInput: {
+    readonly DbNull: runtime.DbNullClass;
+    readonly JsonNull: runtime.JsonNullClass;
+};
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput];
 export declare const QueryMode: {
     readonly default: 'default';
     readonly insensitive: 'insensitive';
 };
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode];
+export declare const JsonNullValueFilter: {
+    readonly DbNull: runtime.DbNullClass;
+    readonly JsonNull: runtime.JsonNullClass;
+    readonly AnyNull: runtime.AnyNullClass;
+};
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter];
 export declare const NullsOrder: {
     readonly first: 'first';
     readonly last: 'last';
@@ -1755,14 +1939,6 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>;
 /**
- * Reference to a field of type 'DateTime'
- */
-export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>;
-/**
- * Reference to a field of type 'DateTime[]'
- */
-export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
-/**
  * Reference to a field of type 'String'
  */
 export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>;
@@ -1770,6 +1946,22 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>;
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>;
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>;
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>;
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
 /**
  * Reference to a field of type 'Boolean'
  */
@@ -1790,6 +1982,14 @@ export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
  * Reference to a field of type 'Decimal[]'
  */
 export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>;
+/**
+ * Reference to a field of type 'PaymentStatus'
+ */
+export type EnumPaymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentStatus'>;
+/**
+ * Reference to a field of type 'PaymentStatus[]'
+ */
+export type ListEnumPaymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PaymentStatus[]'>;
 /**
  * Reference to a field of type 'Float'
  */
@@ -1945,6 +2145,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter;
 export type GlobalOmitConfig = {
+    auditLog?: Prisma.AuditLogOmit;
     carts?: Prisma.CartsOmit;
     wishlists?: Prisma.WishlistsOmit;
     category?: Prisma.CategoryOmit;
@@ -1954,6 +2155,7 @@ export type GlobalOmitConfig = {
     address?: Prisma.AddressOmit;
     order?: Prisma.OrderOmit;
     orderItem?: Prisma.OrderItemOmit;
+    payment?: Prisma.PaymentOmit;
     products?: Prisma.ProductsOmit;
     productImage?: Prisma.ProductImageOmit;
     productAttributes?: Prisma.ProductAttributesOmit;

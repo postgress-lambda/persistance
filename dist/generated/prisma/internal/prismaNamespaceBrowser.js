@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductImageScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.OrderItemScalarFieldEnum = exports.OrderScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
+exports.NullsOrder = exports.JsonNullValueFilter = exports.QueryMode = exports.NullableJsonNullValueInput = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductImageScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.PaymentScalarFieldEnum = exports.OrderItemScalarFieldEnum = exports.OrderScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.AuditLogScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/index-browser"));
 exports.Decimal = runtime.Decimal;
 exports.NullTypes = {
@@ -75,6 +75,7 @@ exports.JsonNull = runtime.JsonNull;
  */
 exports.AnyNull = runtime.AnyNull;
 exports.ModelName = {
+    AuditLog: 'AuditLog',
     Carts: 'Carts',
     Wishlists: 'Wishlists',
     Category: 'Category',
@@ -84,6 +85,7 @@ exports.ModelName = {
     Address: 'Address',
     Order: 'Order',
     OrderItem: 'OrderItem',
+    Payment: 'Payment',
     Products: 'Products',
     ProductImage: 'ProductImage',
     ProductAttributes: 'ProductAttributes',
@@ -102,6 +104,15 @@ exports.TransactionIsolationLevel = runtime.makeStrictEnum({
     RepeatableRead: 'RepeatableRead',
     Serializable: 'Serializable'
 });
+exports.AuditLogScalarFieldEnum = {
+    id: 'id',
+    customerId: 'customerId',
+    action: 'action',
+    entity: 'entity',
+    entityId: 'entityId',
+    details: 'details',
+    createdAt: 'createdAt'
+};
 exports.CartsScalarFieldEnum = {
     id: 'id',
     customerId: 'customerId',
@@ -120,6 +131,7 @@ exports.WishlistsScalarFieldEnum = {
 exports.CategoryScalarFieldEnum = {
     id: 'id',
     name: 'name',
+    imageurl: 'imageurl',
     description: 'description',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -127,6 +139,7 @@ exports.CategoryScalarFieldEnum = {
 exports.SubCategoryScalarFieldEnum = {
     id: 'id',
     name: 'name',
+    imageurl: 'imageurl',
     categoryId: 'categoryId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -172,6 +185,16 @@ exports.OrderItemScalarFieldEnum = {
     productId: 'productId',
     quantity: 'quantity',
     price: 'price',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.PaymentScalarFieldEnum = {
+    id: 'id',
+    orderID: 'orderID',
+    amount: 'amount',
+    status: 'status',
+    provider: 'provider',
+    transactionId: 'transactionId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };
@@ -248,9 +271,18 @@ exports.SortOrder = {
     asc: 'asc',
     desc: 'desc'
 };
+exports.NullableJsonNullValueInput = {
+    DbNull: exports.DbNull,
+    JsonNull: exports.JsonNull
+};
 exports.QueryMode = {
     default: 'default',
     insensitive: 'insensitive'
+};
+exports.JsonNullValueFilter = {
+    DbNull: exports.DbNull,
+    JsonNull: exports.JsonNull,
+    AnyNull: exports.AnyNull
 };
 exports.NullsOrder = {
     first: 'first',

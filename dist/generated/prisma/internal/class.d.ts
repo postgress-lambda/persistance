@@ -11,8 +11,8 @@ export interface PrismaClientConstructor {
    * const prisma = new PrismaClient({
    *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
    * })
-   * // Fetch zero or more Carts
-   * const carts = await prisma.carts.findMany()
+   * // Fetch zero or more AuditLogs
+   * const auditLogs = await prisma.auditLog.findMany()
    * ```
    *
    * Read more in our [docs](https://pris.ly/d/client).
@@ -30,8 +30,8 @@ export interface PrismaClientConstructor {
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Carts
- * const carts = await prisma.carts.findMany()
+ * // Fetch zero or more AuditLogs
+ * const auditLogs = await prisma.auditLog.findMany()
  * ```
  *
  * Read more in our [docs](https://pris.ly/d/client).
@@ -118,13 +118,24 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         extArgs: ExtArgs;
     }>>;
     /**
- * `prisma.carts`: Exposes CRUD operations for the **Carts** model.
+ * `prisma.auditLog`: Exposes CRUD operations for the **AuditLog** model.
   * Example usage:
   * ```ts
-  * // Fetch zero or more Carts
-  * const carts = await prisma.carts.findMany()
+  * // Fetch zero or more AuditLogs
+  * const auditLogs = await prisma.auditLog.findMany()
   * ```
   */
+    get auditLog(): Prisma.AuditLogDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.carts`: Exposes CRUD operations for the **Carts** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Carts
+      * const carts = await prisma.carts.findMany()
+      * ```
+      */
     get carts(): Prisma.CartsDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
@@ -214,6 +225,17 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
       * ```
       */
     get orderItem(): Prisma.OrderItemDelegate<ExtArgs, {
+        omit: OmitOpts;
+    }>;
+    /**
+     * `prisma.payment`: Exposes CRUD operations for the **Payment** model.
+      * Example usage:
+      * ```ts
+      * // Fetch zero or more Payments
+      * const payments = await prisma.payment.findMany()
+      * ```
+      */
+    get payment(): Prisma.PaymentDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
     /**

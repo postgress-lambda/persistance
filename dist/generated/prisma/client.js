@@ -61,8 +61,8 @@ __exportStar(require("./enums.js"), exports);
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Carts
- * const carts = await prisma.carts.findMany()
+ * // Fetch zero or more AuditLogs
+ * const auditLogs = await prisma.auditLog.findMany()
  * ```
  *
  * Read more in our [docs](https://pris.ly/d/client).

@@ -9,7 +9,7 @@
 * 🟢 You can import this file directly.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OrderStatus = void 0;
+exports.PaymentStatus = exports.OrderStatus = void 0;
 exports.OrderStatus = {
     PENDING: 'PENDING',
     CONFIRMED: 'CONFIRMED',
@@ -17,5 +17,11 @@ exports.OrderStatus = {
     SHIPPED: 'SHIPPED',
     DELIVERED: 'DELIVERED',
     CANCELLED: 'CANCELLED'
+};
+exports.PaymentStatus = {
+    PENDING: 'PENDING',
+    SUCCESS: 'SUCCESS',
+    FAILED: 'FAILED',
+    REFUNDED: 'REFUNDED'
 };
 //# sourceMappingURL=enums.js.map
