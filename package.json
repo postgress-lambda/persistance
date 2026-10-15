@@ -1,6 +1,13 @@
 {
-  "name": "@halithmm/persistence",
+  "name": "@rm-ecommerce/persistence",
   "version": "1.0.5",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rm-ecommerce/persistence.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },  
   "description": "Reusable Node.js persistence layer using Prisma 7 and PostgreSQL",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
