@@ -57,6 +57,16 @@ export type Customer = Prisma.CustomerModel;
  */
 export type Address = Prisma.AddressModel;
 /**
+ * Model Order
+ *
+ */
+export type Order = Prisma.OrderModel;
+/**
+ * Model OrderItem
+ *
+ */
+export type OrderItem = Prisma.OrderItemModel;
+/**
  * Model Products
  *
  */

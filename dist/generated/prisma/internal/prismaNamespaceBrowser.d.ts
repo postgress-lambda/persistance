@@ -33,6 +33,8 @@ export declare const ModelName: {
     readonly Attributes: 'Attributes';
     readonly Customer: 'Customer';
     readonly Address: 'Address';
+    readonly Order: 'Order';
+    readonly OrderItem: 'OrderItem';
     readonly Products: 'Products';
     readonly ProductImage: 'ProductImage';
     readonly ProductAttributes: 'ProductAttributes';
@@ -114,6 +116,24 @@ export declare const AddressScalarFieldEnum: {
     readonly updatedAt: 'updatedAt';
 };
 export type AddressScalarFieldEnum = (typeof AddressScalarFieldEnum)[keyof typeof AddressScalarFieldEnum];
+export declare const OrderScalarFieldEnum: {
+    readonly id: 'id';
+    readonly customerId: 'customerId';
+    readonly status: 'status';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum];
+export declare const OrderItemScalarFieldEnum: {
+    readonly id: 'id';
+    readonly orderID: 'orderID';
+    readonly productId: 'productId';
+    readonly quantity: 'quantity';
+    readonly price: 'price';
+    readonly createdAt: 'createdAt';
+    readonly updatedAt: 'updatedAt';
+};
+export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum];
 export declare const ProductsScalarFieldEnum: {
     readonly id: 'id';
     readonly name: 'name';
@@ -124,6 +144,7 @@ export declare const ProductsScalarFieldEnum: {
     readonly discountType: 'discountType';
     readonly discount: 'discount';
     readonly offerPrice: 'offerPrice';
+    readonly isActive: 'isActive';
     readonly createdAt: 'createdAt';
     readonly updatedAt: 'updatedAt';
 };

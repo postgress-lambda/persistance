@@ -48,7 +48,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductImageScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
+exports.NullsOrder = exports.QueryMode = exports.SortOrder = exports.UserProfileScalarFieldEnum = exports.UseraccountScalarFieldEnum = exports.PermissionScalarFieldEnum = exports.RolesScalarFieldEnum = exports.ProductCategory_SubCatScalarFieldEnum = exports.ProductAttributesScalarFieldEnum = exports.ProductImageScalarFieldEnum = exports.ProductsScalarFieldEnum = exports.OrderItemScalarFieldEnum = exports.OrderScalarFieldEnum = exports.AddressScalarFieldEnum = exports.CustomerScalarFieldEnum = exports.AttributesScalarFieldEnum = exports.SubCategoryScalarFieldEnum = exports.CategoryScalarFieldEnum = exports.WishlistsScalarFieldEnum = exports.CartsScalarFieldEnum = exports.TransactionIsolationLevel = exports.ModelName = exports.AnyNull = exports.JsonNull = exports.DbNull = exports.NullTypes = exports.Decimal = void 0;
 const runtime = __importStar(require("@prisma/client/runtime/index-browser"));
 exports.Decimal = runtime.Decimal;
 exports.NullTypes = {
@@ -82,6 +82,8 @@ exports.ModelName = {
     Attributes: 'Attributes',
     Customer: 'Customer',
     Address: 'Address',
+    Order: 'Order',
+    OrderItem: 'OrderItem',
     Products: 'Products',
     ProductImage: 'ProductImage',
     ProductAttributes: 'ProductAttributes',
@@ -157,6 +159,22 @@ exports.AddressScalarFieldEnum = {
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };
+exports.OrderScalarFieldEnum = {
+    id: 'id',
+    customerId: 'customerId',
+    status: 'status',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
+exports.OrderItemScalarFieldEnum = {
+    id: 'id',
+    orderID: 'orderID',
+    productId: 'productId',
+    quantity: 'quantity',
+    price: 'price',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+};
 exports.ProductsScalarFieldEnum = {
     id: 'id',
     name: 'name',
@@ -167,6 +185,7 @@ exports.ProductsScalarFieldEnum = {
     discountType: 'discountType',
     discount: 'discount',
     offerPrice: 'offerPrice',
+    isActive: 'isActive',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
 };
